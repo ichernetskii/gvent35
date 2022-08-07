@@ -1,0 +1,30 @@
+@import "style/variables.scss";
+
+// + Выделение текста
+::selection {
+  background: $color-text-selection; /* Safari */
+}
+
+::-moz-selection {
+  background: $color-text-selection; /* Firefox */
+}
+// - Выделение текста*/
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hidden {
+  display: none;
+}
+
+.app {
+  color: $color-text;
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: $font-size-base;
+  background-color: $color-bg;
+  overflow-x: hidden;
+}

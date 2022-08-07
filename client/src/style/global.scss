@@ -1,0 +1,72 @@
+@import "./variables.scss";
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.btn {
+  border: 0;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  background-color: $color-accent;
+  padding: 0 10px;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+  box-shadow:
+          inset 0 1px #FFB978,
+          inset 0 -1px 1px rgba(136, 63, 15, 0.66),
+          0 7px 14px -12px rgba(50, 50, 60, 0.2),
+          inset 0 25px 35px -7px rgba(255, 160, 49, 0.48);
+
+  &:hover {
+    background-color: lighten($color-accent, 6%);
+  }
+
+  &:active {
+    background-color: darken($color-accent, 6%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.text-control {
+  border-radius: 18px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  color: $color-accent;
+  background: linear-gradient(275.97deg, #F9F9F9 -26.87%, #F8F7F7 116.01%);
+  border: 1px solid #E0E0E0;
+
+  &:hover {
+    background-color: #FCFCFC;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $color-accent;
+    text-align: center;
+  }
+
+  &_error {
+    border-color: $color-error !important;
+  }
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}

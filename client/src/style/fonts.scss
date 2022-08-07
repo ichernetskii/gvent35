@@ -1,0 +1,49 @@
+$fonts-path: "../fonts/";
+
+@font-face {
+  font-family: "RubikVar";
+  src: url($fonts-path + "Rubik/Rubik_var.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RubikVar";
+  src: url($fonts-path + "Rubik/Rubik_Italic_var.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url($fonts-path + "Rubik/Light/Rubik_Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url($fonts-path + "Rubik/Regular/Rubik_Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url($fonts-path + "Rubik/Regular/Rubik_Regular_Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url($fonts-path + "Rubik/Bold/Rubik_Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

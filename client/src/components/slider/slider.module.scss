@@ -1,0 +1,185 @@
+@use "sass:math";
+@import "style/variables.scss";
+@import "style/mixins.scss";
+
+.slider {
+  @include media-styles("s") {
+    display: flex;
+  }
+
+  &__image-wrapper {
+    @include media-styles("s") {
+      width: math.div(2, 3) * 100%;
+    }
+
+    @include media-styles("xs") {
+      display: none;
+    }
+  }
+
+  &__button-group {
+    display: flex;
+    margin-bottom: 40px;
+
+    @include media-styles("s") {
+      width: math.div(1, 3) * 100%;
+      flex-direction: column;
+      padding: 0 5%;
+      margin-bottom: 17px;
+      box-sizing: border-box;
+      justify-content: space-between;
+    }
+
+    @include media-styles("xs") {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    min-height: 56px;
+    margin-right: 20px;
+    padding: 10px 15px;
+    border-radius: 100px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #343341;
+    font-size: $font-size-h5;
+    background-color: #F9F9F9;
+    box-shadow:
+      8px 8px 10px rgba(159, 176, 191, 0.5),
+      -4px -4px 8px rgba(255, 255, 255, 0.7),
+      inset 2px 2px 1px rgba(255, 255, 255, 0.25);
+
+    @media screen and (hover: hover) {
+      &:hover { color: $color-accent }
+    }
+
+
+    @include media-styles("s") {
+      height: 20%;
+      min-height: unset;
+      margin-right: 0;
+      font-size: 13px;
+      text-align: left;
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+    }
+
+    @include media-styles("xs") {
+      min-height: 60px;
+      margin-bottom: 30px;
+      position: relative;
+      padding-right: 40px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid $color-accent;
+        border-right: 2px solid $color-accent;
+        right: 20px;
+        transform: rotate(135deg) translate(-5px);
+        transition: transform 0.2s ease;
+      }
+
+      &_active {
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &_active {
+      color: $color-accent;
+      box-shadow:
+        5px 5px 10px rgba(159, 176, 191, 0.5),
+        -4px -4px 16px rgba(255, 255, 255, 0.7),
+        inset 2px 2px 1px rgba(255, 255, 255, 0.25);
+    }
+
+    &:last-child {
+      margin-right: 25px;
+    }
+  }
+
+  &__image-mobile {
+    display: none;
+
+    @include media-styles("xs") {
+      display: block;
+      border-radius: 30px;
+      max-height: 0;
+      transition: max-height 0.3s linear, margin 0.3s linear;
+      margin: 0;
+    }
+  }
+
+  &__button_active + &__image-mobile {
+    max-height: 340px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 500px) {
+      max-height: 220px;
+    }
+  }
+
+  &__image-group {
+    display: flex;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    scroll-snap-type: x mandatory;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 40px 0 0 40px;
+
+
+    &_mouse-down {
+      scroll-snap-type: unset;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;  /* Safari and Chrome */
+    }
+  }
+
+  &__image {
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  &__bar-group {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  &__bar {
+    flex-grow: 1;
+    margin-right: 10px;
+    height: 7px;
+    border-radius: 7px;
+    background-color: #DDD;
+    cursor: pointer;
+
+    &_active {
+      background-color: $color-accent;
+      transition: background-color 0.2s;
+    }
+
+    &:last-child {
+      margin-right: 25px;
+    }
+  }
+}

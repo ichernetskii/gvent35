@@ -1,0 +1,27 @@
+@import "style/variables.scss";
+@import "components/breadcrumbs/breadcrumbs.module.scss";
+
+.root {
+  padding: var(--header) var(--page-margin-right) 50px var(--page-margin-left);
+  display: flex;
+  flex-direction: column;
+}
+
+.breadcrumbs {
+  margin-top: 10px;
+}
+
+.query {
+  margin: 10px auto 30px auto;
+}
+
+.table {
+  width: 100%;
+}
+
+.btn {
+  margin: 60px auto 20px auto;
+  padding: 25px 0;
+  width: 320px;
+  max-width: 100%;
+}

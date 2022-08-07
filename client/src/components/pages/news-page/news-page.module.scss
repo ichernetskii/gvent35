@@ -1,0 +1,27 @@
+@import "style/variables.scss";
+@import "style/mixins.scss";
+@import "components/breadcrumbs/breadcrumbs.module.scss";
+@import "components/pagination/pagination.module.scss";
+
+.root {
+  padding: var(--header) var(--page-margin-right) 50px var(--page-margin-left);
+  display: flex;
+  flex-direction: column;
+}
+
+.breadcrumbs {
+  margin-top: 10px;
+}
+
+.page-header {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0.67em 0 2em 0;
+}
+
+.pagination {
+  margin: 0 100px 60px 100px;
+  @include media-styles("xl")  { margin: 0 0 60px 0 }
+  @include media-styles("s")  { --columns: 2; --rows: 3; }
+  @include media-styles("xs") { --columns: 1; --rows: 6; margin-bottom: 10px }
+}

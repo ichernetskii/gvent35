@@ -1,0 +1,25 @@
+{
+  "name": "gvent35",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "",
+  "scripts": {
+    "server:install": "npm install --prefix server",
+    "server:dev": "nodemon server/app.js",
+    "server:prod": "cross-env NODE_ENV=production node server/app.js",
+    "client:install": "npm install --prefix client",
+    "client:watch": "npm run watch --prefix client",
+    "client:prod": "npm run production --prefix client",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "prod": "npm i && npm run server:install && npm run client:install && npm run client:prod && pm2 start ecosystem.config.js --env production",
+    "zip": "zip -er config.zip config/* client/config/.env* client/config/* server/config/* -x '*.DS_Store'",
+    "unzip": "unzip config.zip"
+  },
+  "author": "Ilia Chernetskii <ilya.chernetsky@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.0.2",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.7"
+  }
+}

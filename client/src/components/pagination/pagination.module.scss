@@ -1,0 +1,138 @@
+@import "style/variables.scss";
+
+.pagination {
+  --columns: 3;
+  --rows   : 2; // 2
+  --flex: 0 1 calc(100% / var(--columns) - 10px);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow-wrap: anywhere;
+}
+
+.image-wrapper {
+  overflow: hidden;
+  border-radius: 40px;
+  flex: var(--flex);
+}
+
+.padding-hack {
+  padding-bottom: 65%;
+  position: relative;
+  &_skip { padding-bottom: 0 }
+}
+
+.image {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media (hover: hover) {
+    &:hover { transform: translateY(-50%) scale(1.05) }
+  }
+}
+
+.header {
+  color: $color-accent;
+  flex: var(--flex);
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-h4;
+  display: flex;
+  align-items: center;
+  margin: 1em 0 0.5em 0;
+
+  &_skip { margin-top: 0 }
+}
+
+.text {
+  text-align: left;
+  flex: var(--flex);
+  margin-bottom: 1em;
+
+  & p { margin: 0.5em 0 }
+  &_skip { margin-bottom: 0 }
+
+  @include media-styles("s")  { margin-bottom: 2em }
+  @include media-styles("xs")  { margin-bottom: 3em }
+}
+
+.controls {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  @include media-styles("xs")  { margin-top: 0 }
+
+  &_hidden {
+    display: none;
+  }
+
+  &__arrow {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 17px;
+    background: radial-gradient(120.62% 120.62% at 88.75% 131.25%, #FF7821 59.92%, $color-accent 100%);
+    box-shadow:
+            -4px -4px 10px rgba(255, 255, 255, 0.33),
+            4px 4px 10px rgba(157, 69, 12, 0.33),
+            inset 1px 1px 1px rgba(255, 255, 255, 0.42);
+    &:after {
+      content: "";
+      width: 20%;
+      height: 20%;
+    }
+
+    &:hover {
+      background: radial-gradient(120.62% 120.62% at 88.75% 131.25%, $color-accent 17.71%, #FF8231 72.92%);
+    }
+
+    &:active {
+      background: radial-gradient(120.62% 120.62% at 88.75% 131.25%, #FF7821 30.73%, $color-accent 100%);
+    }
+
+    &_left {
+      margin-left: 0;
+
+      &:after {
+        border-top: 1px solid #FFF;
+        border-left: 1px solid #FFF;
+        transform: translateX(2px) rotateZ(-45deg);
+      }
+    }
+
+    &_right {
+      margin-right: 0;
+
+      &:after {
+        border-bottom: 1px solid #FFF;
+        border-right: 1px solid #FFF;
+        transform: translateX(-2px) rotateZ(-45deg);
+      }
+    }
+  }
+
+  &__dots {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    border: 1px solid $color-accent;
+    margin: 0 7px;
+    transition: background-color 0.15s ease-in;
+
+    &_active { background-color: $color-accent }
+  }
+}

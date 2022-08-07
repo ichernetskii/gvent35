@@ -1,0 +1,8 @@
+**/.idea
+**/node_modules/
+**/coverage/
+**/build/
+**/.cache
+**/.DS_Store
+.DS_Store
+**/config/

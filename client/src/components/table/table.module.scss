@@ -1,0 +1,81 @@
+@import "style/mixins.scss";
+@import "style/variables.scss";
+
+.root {
+  --border-radius: 35px;
+
+  font-size: $font-size-h4;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #E0E0E0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+
+  @include media-styles("xs") { font-size: $font-size-h5 }
+}
+
+.header {
+  border-radius: 20px 20px 0 0;
+  display: table-row;
+  @include media-styles("xs") { display: none }
+
+  &__cell {
+    width: calc(100% / 3);
+    background-color: #EFEFEF;
+
+    &:first-child {
+      border-top-left-radius: var(--border-radius);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--border-radius);
+    }
+
+    &:first-child {
+      width: 35%;
+    }
+
+    &:not(:first-child) {
+      width: 30%;
+    }
+  }
+}
+
+.row {
+  position: initial;
+
+  &_L {
+    display: table-row;
+    @include media-styles("xs") { display: none }
+  }
+
+  &_S {
+    display: none;
+    @include media-styles("xs") { display: table-row }
+
+    &:nth-child(2) .cell {
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+  }
+}
+
+.cell {
+  padding: 20px;
+  border: 1px solid #E0E0E0;
+
+  &_header {
+    text-align: center;
+    font-weight: $font-weight-bold;
+    font-size: 1.15em;
+    background-color: #EFEFEF;
+  }
+
+  &_value {
+    text-align: center;
+    width: 30%;
+    font-weight: $font-weight-regular;
+  }
+}
+
+mark {
+  background-color: $color-text-selection;
+}

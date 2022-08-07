@@ -1,0 +1,38 @@
+@import "style/variables.scss";
+
+.root {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+
+  &:hover .input, .input:focus {
+    width: 450px;
+  }
+}
+
+.input {
+  line-height: 1em;
+  display: block;
+  border-radius: 100px;
+  border: 2px solid $color-accent;
+  padding: 12px 20px;
+  outline: none;
+  color: $color-accent;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 300px;
+  transition: width 0.5s ease-in-out;
+
+  &::placeholder {
+    color: lighten($color-accent, 25%);
+  }
+}
+
+.image {
+  position: absolute;
+  display: block;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 65%;
+}

@@ -1,0 +1,54 @@
+@import "style/variables.scss";
+@import "style/mixins.scss";
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  font-style: italic;
+
+  & > * {
+    margin:10px 20px 10px 0;
+  }
+
+  &__item {
+    color: #BDBDBD;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-text-unactive;
+      text-decoration: underline;
+    }
+
+    &_last {
+      color: #FFB978;
+
+      &:hover {
+        text-decoration: none;
+        color: #FFB978
+      }
+    }
+  }
+}
+
+.arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__line {
+    width: 50px;
+    height: 1px;
+    background-color: $color-text-unactive;
+  }
+
+  &__end {
+    position: absolute;
+    right: 0;
+    border: 1px solid $color-text-unactive;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+  }
+}
