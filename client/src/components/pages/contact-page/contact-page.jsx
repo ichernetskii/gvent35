@@ -132,7 +132,7 @@ const ContactPage = () => {
                     <div styleName="info__text">
                         <header>Контактный телефон</header>
                         <p><a href={`tel:${phoneToTel(data.contact.phone)}`}>{data.contact.phone}</a></p>
-                        <p>Валерий Алексеевич</p>
+                        <p>Александр Сергеевич</p>
                     </div>
                 </div>
             </section>

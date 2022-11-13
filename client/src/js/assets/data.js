@@ -46,7 +46,7 @@ const data = {
         { label: "Контакты", href: "/contact", component: ContactPage }
     ],
     contact: {
-        phone: "+7 (921) 126-37-67",
+        phone: "+7 (900) 506-06-12",
         phoneDisp: "+7 (8172) 78-78-04",
         email: "info@gvent35.ru",
         vk: "https://vk.com/gvent35",
