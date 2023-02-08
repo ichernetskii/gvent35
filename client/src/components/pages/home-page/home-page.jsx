@@ -139,8 +139,7 @@ const HomePage = ({menuItems}) => {
                         <div className={s["deflector__text"]}>
                             <a className={s["deflector__phone"]} href={`tel:${phoneToTel(data.contact.phoneDisp)}`}>{data.contact.phoneDisp}</a>
                             <h1 className={s["deflector__header"]}>ПРОФЕССИОНАЛЬНОЕ ОБСЛЕДОВАНИЕ И&nbsp;ЧИСТКА СИСТЕМ ВЕНТИЛЯЦИИ</h1>
-                            <div className={s["deflector__subheader"]}>Ваша исправная вентиляция уже через 100&nbsp;минут!</div>
-                            <button className={cn("btn", s["deflector__btn"])} onClick={() => dispatch(setCtaVisible(true))} >Прочистить каналы!</button>
+                            <button className={cn("btn", s["deflector__btn"])} onClick={() => dispatch(setCtaVisible(true))} >Связаться со специалистом</button>
                         </div>
                     </div>
                 </div>

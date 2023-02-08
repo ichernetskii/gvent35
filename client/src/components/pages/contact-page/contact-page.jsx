@@ -45,12 +45,12 @@ const ContactPage = () => {
                 <div styleName="schedule">
                     <div>
                         <time
-                            dateTime="Mo-Fr 09:00-18:30"
+                            dateTime="Mo-Fr 08:00-17:00"
                             itemProp="openingHours"
                             styleName="schedule__open"
                         >
                             <div><b>Понедельник - Пятница</b></div>
-                            <div>9:00 - 18:30</div>
+                            <div>8:00 - 17:00</div>
                         </time>
                         <div>
                             <div><b>Суббота, Воскресенье</b></div>

@@ -46,14 +46,14 @@ const data = {
         { label: "Контакты", href: "/contact", component: ContactPage }
     ],
     contact: {
-        phone: "+7 (900) 506-06-12",
-        phoneDisp: "+7 (8172) 78-78-04",
+        phone: "+7 (8172) 20-20-04",
+        phoneDisp: "+7 (8172) 20-20-04",
         email: "info@gvent35.ru",
         vk: "https://vk.com/gvent35",
-        address: "160029, г.&nbsp;Вологда, Машиностроительная&nbsp;ул., д.&nbsp;19, офис.&nbsp;306",
-        addressFact: "160029, г.&nbsp;Вологда, ул.&nbsp;Горького, дом.&nbsp;133, офис&nbsp;306",
+        address: "160029, г.&nbsp;Вологда, Машиностроительная&nbsp;ул., д.&nbsp;19, офис.&nbsp;307",
+        addressFact: "160029, г.&nbsp;Вологда, ул.&nbsp;Горького, дом.&nbsp;133, офис&nbsp;307",
         name: "ЖИЛПРОМВЕНТИЛЯЦИЯ",
-        ceo: "Щекотова Татьяна Олеговна",
+        ceo: "Киселёв Александр Сергеевич",
         id: "gvent35",
         position: [59.212036, 39.912777]
     },

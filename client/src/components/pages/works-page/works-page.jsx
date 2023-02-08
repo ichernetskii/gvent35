@@ -48,7 +48,7 @@ const WorksPage = () => {
             </section>
             <section className="content">
                 <button className="btn" styleName="btn" onClick={() => dispatch(setCtaVisible(true))} >
-                    Прочистить каналы!
+                    Связаться со специалистом
                 </button>
             </section>
         </main>
